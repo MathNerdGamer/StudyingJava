@@ -59,3 +59,23 @@ System.out.print(oldVar); // This prints "New String"
 * When handling an invalid input to a `Scanner`, use the `nextLine()` method to clear out the incorrect input, as errors move the `Scanner` cursor back to its initial position.
 
 * When formatting is required for output, `System.out.printf` can be used, and it seems to have similar format specifiers as C.
+
+* Java has the usual `if`, `else`, `else if`, and `switch` statements. Similarly, there are the usual relational operators, `<, <=, >, >=, ==`, as well as the logical operators `&&, ||, !` with their usual meanings, precedences, and short-circuit behavior.
+
+* Like with pointers in C, using the `==` operator with reference variables only compares if they're aliases. For a class like `String`, there is a method `equals()` which tests equality.
+
+* For `<, <=, >, >=`, there is the `compareTo()` method, where `x.compareTo(y)` returns 0 if `x.equals(y)`, a positive integer if `x` comes lexicographically after `y`, and a negative integer if `x` comes lexicographically before `y`.
+
+* The `switch` statement can be used with values that evaluate to one of these types:
+    * char
+    * byte
+    * short
+    * int
+    * String
+    * enum
+    * Character
+    * Byte
+    * Short
+    * Integer
+
+* Java also has the typical iteration statements, `for`, `while`, `do-while`.
