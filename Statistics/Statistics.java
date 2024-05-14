@@ -1,7 +1,7 @@
 // Calculates a running mean and variance of some doubles in a way that avoids accumulating floating point error.
 // Prints out the calculated sample mean, variance, and deviation.
 // Uses the algorithm described in Knuth's The Art of Computer Programming, Volume 2, 3rd edition (Page 232).
-// I index from 0 instead
+// I index from 0 instead of 1, but it comes out to the same formula.
 package Statistics;
 
 import java.util.Scanner;
@@ -21,7 +21,8 @@ public class Statistics {
                     double current = Double.parseDouble(args[k]);
                     double previousMean = mean;
 
-                    mean += (current - mean) / (k + 1); // M[k] = M[k-1] + (x[k] - M[k-1]) / k for k >= 1.
+                    // M[k] = M[k-1] + (x[k] - M[k-1]) / k for k >= 1.
+                    mean += (current - mean) / (k + 1);
 
                     if (k > 0) {
                         // S[k] = S[k-1] + (x[k] - M[k-1]) * (x[k] - M[k]) for k >= 1.
@@ -43,9 +44,12 @@ public class Statistics {
                 try {
                     double current = input.nextDouble();
                     double previousMean = mean;
+
+                    // M[k] = M[k-1] + (x[k] - M[k-1]) / k for k >= 1.
                     mean += (current - mean) / (size + 1);
 
                     if (size != 0) {
+                        // S[k] = S[k-1] + (x[k] - M[k-1]) * (x[k] - M[k]) for k >= 1.
                         variance += (current - previousMean) * (current - mean);
                     }
 
