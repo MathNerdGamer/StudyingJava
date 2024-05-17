@@ -15,3 +15,5 @@ Learning Java using [this edX course by GTx](https://www.edx.org/certificates/pr
 ### Programs:
 * [Statistics](./Statistics/Statistics.java)
 * [EuclideanDistance](./EuclideanDistance/EuclideanDistance.java)
+* [Matrix](./Matrix/Matrix.java)
+* [Fibonacci Matrix](./Matrix/FibonacciMatrix.java)

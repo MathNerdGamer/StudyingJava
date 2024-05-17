@@ -1,11 +1,9 @@
 // Calculates a running mean and variance of some doubles in a way that avoids accumulating floating point error.
 // Prints out the calculated sample mean, variance, and deviation.
 // Uses the algorithm described in Knuth's The Art of Computer Programming, Volume 2, 3rd edition (Page 232).
-// I index from 0 instead of 1, but it comes out to the same formula.
 package Statistics;
 
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Statistics {
     public static void main(String[] args) {

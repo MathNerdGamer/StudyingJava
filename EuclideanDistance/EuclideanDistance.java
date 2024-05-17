@@ -1,8 +1,6 @@
 // Calculates the Euclidean distance between two vectors.
 package EuclideanDistance;
 
-import java.lang.Math;
-
 public class EuclideanDistance {
     public static void main(String[] args) {
         double[] a = { 1.0, 2.0, 3.0, 1.0 };
