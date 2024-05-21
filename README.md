@@ -17,3 +17,10 @@ Learning Java using [this edX course by GTx](https://www.edx.org/certificates/pr
 * [EuclideanDistance](./EuclideanDistance/EuclideanDistance.java)
 * [Matrix](./Matrix/Matrix.java)
 * [Fibonacci Matrix](./Matrix/FibonacciMatrix.java)
+
+## Week 3
+### [Notes](./Notes/Week3.md)
+
+### Programs:
+* [Sorting Algorithms (Selection Sort, Merge Sort, Insertion Sort)](./Sorting/Sorting.java)
+* [Search Algorithms (Linear Search, Binary Search)](./Searching/Searching.java)
