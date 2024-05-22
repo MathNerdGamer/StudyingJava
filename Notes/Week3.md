@@ -59,3 +59,18 @@
 * Empirical results show that merge Sort is often much faster than selection sort, and this can also be seen by analyzing them theoretically: Selection sort uses a number of comparisons that grows roughly *quadratically* with the input size, while merge sort uses a *quasilinear* number of comparisons.
 
 * One can get a very quick estimate for running times from code by, essentially, counting how many nested loops there are.
+
+* Going back to interfaces, if a new method is needed in an interface, but not every implementation can be expected to update to support the new method, then some level of backwards compatibility is needed. In Java, this comes in the form of `default` methods, which are methods provided by an interface in the case that an implementation doesn't actually define it:
+    ```java
+    default void myNewMethod() {
+        // Do something by default.
+    }
+    ```
+
+* An interface may also provide a `static` method implementation, but these cannot be overridden. For an interface `A`, one would call the `static` method `static int myStaticMethod(int x)` as any other, such as by writing `A.myStaticMethod(3)`, for example.
+
+* Any variable declared in an interface is inherently `public`, `static`, and `final`.
+
+* Some interfaces are nothing but constants, and are (conveniently) called *constant interfaces*. Such interfaces may hold stuff like physical constants or other relevant constants for some sort of computation.
+
+* 

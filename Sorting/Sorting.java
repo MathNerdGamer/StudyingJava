@@ -49,9 +49,9 @@ public class Sorting {
         }
     }
 
-    private static void merge(int[] array, int leftStart, int rightStart, int end) {
-        int leftSize = rightStart - leftStart + 1;
-        int rightSize = end - rightStart;
+    private static void merge(int[] array, int leftStart, int leftEnd, int arrayEnd) {
+        int leftSize = leftEnd - leftStart + 1;
+        int rightSize = arrayEnd - leftEnd;
 
         int[] leftHalf = new int[leftSize];
         int[] rightHalf = new int[rightSize];
@@ -61,7 +61,7 @@ public class Sorting {
         }
 
         for (int i = 0; i < rightSize; i++) {
-            rightHalf[i] = array[rightStart + i + 1];
+            rightHalf[i] = array[leftEnd + i + 1];
         }
 
         int leftIdx = 0;
@@ -102,9 +102,9 @@ public class Sorting {
         }
     }
 
-    private static <T extends Comparable<T>> void merge(T[] array, int leftStart, int mid, int end) {
-        int leftSize = mid - leftStart + 1;
-        int rightSize = end - mid;
+    private static <T extends Comparable<T>> void merge(T[] array, int leftStart, int leftEnd, int arrayEnd) {
+        int leftSize = leftEnd - leftStart + 1;
+        int rightSize = arrayEnd - leftEnd;
 
         // Suppressing warning for unchecked cast from Comparable[] to T[].
         @SuppressWarnings("unchecked")
@@ -116,7 +116,7 @@ public class Sorting {
             leftArray[i] = array[leftStart + i];
         }
         for (int i = 0; i < rightSize; i++) {
-            rightArray[i] = array[mid + 1 + i];
+            rightArray[i] = array[leftEnd + 1 + i];
         }
 
         int leftIdx = 0;
