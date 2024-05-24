@@ -73,4 +73,15 @@
 
 * Some interfaces are nothing but constants, and are (conveniently) called *constant interfaces*. Such interfaces may hold stuff like physical constants or other relevant constants for some sort of computation.
 
-* 
+* Polymorphism in Java is meant to allow programs to process objects of different classes that have similar methods without having to rewrite code for each class.
+
+* Consider a class `A` with method `methodA()`. Suppose `A` has a subclass `B` which has a method `methodB()` not declared in `A`. Consider the following lines of code:
+    ```java
+    A varA = new B();    // 1 - compiles
+    varA.methodA();      // 2 - compiles
+    varA.methodB();      // 3 - fails
+    ((B)varA).methodB(); // 4 - compiles
+    ```
+    Since a `B` is an `A`, lines 1 and 2 compile. However, line 3 will fail to compile, since an instance of `A` does not have access to methods found only in instances of `B`. This can be fixed by, instead, casting to `B` before calling the method, as in line 4.
+
+* If line 1 above is replaced with `A varA = new A();`, then lines 1, 2, and 4 would still compile. However, since `varA` references an object of type `A`, this will throw `ClassCastException` at runtime.
