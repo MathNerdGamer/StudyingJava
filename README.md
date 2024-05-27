@@ -24,3 +24,9 @@ Learning Java using [this edX course by GTx](https://www.edx.org/certificates/pr
 ### Programs:
 * [Sorting Algorithms (Selection Sort, Merge Sort, Insertion Sort)](./Sorting/Sorting.java)
 * [Search Algorithms (Linear Search, Binary Search)](./Searching/Searching.java)
+
+## Week 4
+### [Notes](./Notes/Week4.md)
+
+### Programs:
+* Edited [FahrenheitToCelsius](./FahrenheitToCelsius/FahrenheitToCelsius.java) to include a `finally` block.
