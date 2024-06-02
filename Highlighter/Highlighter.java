@@ -3,7 +3,7 @@
  * and all instances of the word are highlighted.
  * Only matches words exactly, not including instances that lie within larger words
  * (the "fast" in "breakfast" should not be highlighted), but we can choose to allow some delimiters (such as punctuation).
- * If the `-inv` flag is enabled, then all lines which do *not* contain the word are written inside.
+ * If the `-inv` flag is enabled, then all lines which do *not* contain the word are written instead.
  */
 
 package Highlighter;
