@@ -30,3 +30,10 @@ Learning Java using [this edX course by GTx](https://www.edx.org/certificates/pr
 
 ### Programs:
 * Edited [FahrenheitToCelsius](./FahrenheitToCelsius/FahrenheitToCelsius.java) to include a `finally` block.
+* [Highlighter](./Highlighter/Highlighter.java) -- Includes file for testing with the word "math".
+
+## Week 5
+### [Notes](./Notes/Week5.md)
+
+### Programs:
+* [To Be Determined]

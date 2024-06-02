@@ -1,0 +1,9 @@
+This line does not contain the word.
+This line contains the word math.
+This line contains math the word math in multiple math places.
+This line contains emath and mathe, but not the actual word.
+This line contains emath and mathe, as well as math.
+math is the start of this line.
+This line ends in math
+(math) in math, with <math>. (emath) not included.
+#math math!

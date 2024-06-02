@@ -98,4 +98,31 @@
     ```
     In this case, whether we hit an exception or not, we'd need to run `input.nextLine()` so that the next call to the `Scanner` would execute as expected.
 
-* 
+* As with any other class, we may define our own exceptions, and even extend other exceptions with this. When using exceptions, one uses the `throw` operator to construct the exception.
+
+* To use files in Java, packages such as `java.io.File` and `java.io.FileNotFoundException` are needed.
+
+* To open a file to read, we construct a `Scanner` with a `File` instead of `System.in`.
+
+* When attempting to scan from a file, there *must* be either a `try-catch` to handle `FileNotFoundException`, or the header of the function using the file must have `throws FileNotFoundException`, for example:
+    ```java
+    public static void main(String[] args) throws FileNotFoundException {
+        // File stuff in here.
+    }
+    ```
+
+* When writing to a file, the `PrintWriter` class is used.
+
+* When reading from structured files, such as a CSV (comma-separated values) file, the `split()` method of the `String` class can be helpful. For example, the following code will take data from a CSV file and output each value on separate lines:
+    ```java
+    String fileContents = getFileContents(fileName);
+    String[] tokens = fileContents.split("\n");
+
+    for (String t : tokens) {
+        System.out.println(t);
+    }
+    ```
+
+* The `split()` method can even use regular expressions to define delimiters.
+
+* The `Scanner` class has a `useDelimiter()` method which takes a string like the `split()` method of `String` and automatically parses using it.
