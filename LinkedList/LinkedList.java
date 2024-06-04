@@ -24,6 +24,7 @@ public class LinkedList<T> {
 
     LinkedList(T data) {
         addToFront(data);
+        size = 1;
     }
 
     public boolean isEmpty() {
@@ -42,6 +43,7 @@ public class LinkedList<T> {
 
     public void addToRear(T data) {
         Node<T> newNode = new Node<T>(data, null);
+        size++;
 
         if (isEmpty()) {
             head = newNode;
@@ -51,7 +53,6 @@ public class LinkedList<T> {
 
         tail.next = newNode;
         tail = newNode;
-        size++;
     }
 
     public T removeFromFront() {
@@ -204,7 +205,10 @@ public class LinkedList<T> {
         }
 
         head = null;
-        size--;
+    }
+
+    public int size() {
+        return size;
     }
 
     public static void main(String[] args) {
@@ -248,6 +252,14 @@ public class LinkedList<T> {
             System.out.println("remove() says it removed something that wasn't there.\n");
         }
 
+        System.out.print("Current List:\n" + intList);
+
+        if (intList.size() == 5) {
+            System.out.println("The size is correctly tracked: size = " + intList.size() + ".\n");
+        } else {
+            System.out.println("The size is incorrectly tracked. It should be 5, but it is " + intList.size() + ".");
+        }
+
         if (intList.isEmpty()) {
             System.out.println("isEmpty() reporting empty when not.\n");
         } else {
@@ -256,8 +268,10 @@ public class LinkedList<T> {
 
         intList.clear();
 
-        if (intList.isEmpty()) {
-            System.out.println("clear() and isEmpty() work!");
+        if (intList.isEmpty() && intList.size() == 0) {
+            System.out.println("clear(), isEmpty(), and size() work!");
+        } else {
+            System.out.println("Size is " + intList.size() + ".");
         }
     }
 }
