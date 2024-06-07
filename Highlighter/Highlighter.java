@@ -20,11 +20,13 @@ public class Highlighter {
     // Add more here if you want more.
 
     public static void main(String[] args) {
+        // Allows for words to be detected with punctuation and whitespace around it.
         final String VALID_DELIMITERS = ".!,;:`()[]{}<>_~@#$%^&*\\/|\"'=+ \n\t";
 
         String fileName = "";
         String wordToSearch = "";
 
+        // Command line argument parsing.
         int fileIndex = Arrays.asList(args).indexOf("-f");
         if (fileIndex >= 0 && fileIndex + 1 < args.length) {
             fileName = args[fileIndex + 1];
@@ -65,12 +67,15 @@ public class Highlighter {
         try (Scanner fileScan = new Scanner(new File(fileName))) {
             boolean inverseCommand = Arrays.asList(args).contains("-inv");
 
+            // Highlighting
             while (fileScan.hasNextLine()) {
                 String highlightedLine = highlightString(fileScan.nextLine(), wordToSearch, VALID_DELIMITERS,
                         ANSI_GREEN + ANSI_UNDERLINE);
 
                 boolean writeLine = highlightedLine.contains(ANSI_GREEN);
 
+                // xor to toggle whether to write lines with highlighted words or the ones with
+                // none.
                 if (writeLine ^ inverseCommand) {
                     System.out.println(highlightedLine.toString());
                 }
@@ -96,20 +101,23 @@ public class Highlighter {
                 break;
             }
 
+            // Check if the left side of the substring is okay.
             boolean isPrefixOkay = (startIndex == 0
                     || VALID_DELIMITERS.indexOf(input.charAt(startIndex - 1)) >= 0
                     || VALID_DELIMITERS.isEmpty());
 
+            // Check if the right side of the substring is okay.
             boolean isSuffixOkay = (startIndex + word.length() == input.length()
                     || VALID_DELIMITERS.indexOf(input.charAt(endIndex)) >= 0
                     || VALID_DELIMITERS.isEmpty());
 
+            // If the left and right side are okay, append with highlights.
             if (isPrefixOkay && isSuffixOkay) {
                 highlightedString.append(input.substring(i, startIndex))
                         .append(style)
                         .append(word)
                         .append(ANSI_RESET);
-            } else {
+            } else { // Otherwise, append with substring without highlights.
                 highlightedString.append(input.substring(i, endIndex));
             }
 

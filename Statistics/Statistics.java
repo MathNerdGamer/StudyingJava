@@ -31,6 +31,7 @@ public class Statistics {
                 }
             }
 
+            // Variance requires > 1 data point to be non-zero.
             if (size > 1) {
                 variance /= size - 1;
             }
@@ -53,6 +54,7 @@ public class Statistics {
 
                     size++;
                 } catch (Exception e) {
+                    // Variance requires > 1 data point to be non-zero.
                     if (size > 1) {
                         variance /= size - 1;
                     }

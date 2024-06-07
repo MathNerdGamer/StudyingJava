@@ -1,4 +1,4 @@
-// Does simulations of the MontyHall problem.
+// Does simulations of the Monty Hall problem.
 package MontyHall;
 
 import java.util.Random;
@@ -37,6 +37,7 @@ public class MontyHall {
             doors[car] = false; // Reset the simulation.
         }
 
+        // Calculate the winrate of our strategy.
         double swapWinRate = 100.0 * (((double) successes) / simulations);
 
         System.out.printf("The \"always swap\" strategy wins %.2f%% of the time.\n", swapWinRate);

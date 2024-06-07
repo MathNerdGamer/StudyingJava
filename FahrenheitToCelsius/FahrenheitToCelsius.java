@@ -13,6 +13,7 @@ public class FahrenheitToCelsius {
             Scanner input = new Scanner(System.in);
             boolean done = false;
 
+            // Keep trying to get a valid input.
             while (!done) {
                 try {
                     System.out.print("Enter a temperature in Fahrenheit: ");

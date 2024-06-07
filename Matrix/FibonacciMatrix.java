@@ -6,12 +6,12 @@ package Matrix;
 
 public class FibonacciMatrix {
     public static void main(String[] args) {
-        int fibonacciIndex = 10;
+        int N = 10;
 
         if (args.length > 0) {
             try {
                 args[0] = args[0].replaceAll("[^0-9-]", "");
-                fibonacciIndex = Integer.parseInt(args[0]);
+                N = Integer.parseInt(args[0]);
             } catch (Exception e) {
                 System.out.println("Unable to parse an integer from input. Defaulting to 10.");
             }
@@ -19,8 +19,8 @@ public class FibonacciMatrix {
 
         boolean negative = false;
 
-        if (fibonacciIndex < 0) {
-            fibonacciIndex *= -1;
+        if (N < 0) {
+            N *= -1;
             negative = true;
         }
 
@@ -34,13 +34,15 @@ public class FibonacciMatrix {
         // Starts as the identity matrix.
         Matrix fibMatrix = Matrix.identityMatrix(2);
 
-        for (int i = 0; i < fibonacciIndex; i++) {
+        // Multiply by the Fibonacci matrix over and over.
+        for (int i = 0; i < N; i++) {
             fibMatrix = fibMatrix.multiply(initMatrix);
         }
 
+        // Get the correct suffix for the ordinal value.
         String suffix = "th";
 
-        switch (fibonacciIndex % 10) {
+        switch (N % 10) {
             case 1:
                 suffix = "st";
                 break;
@@ -57,13 +59,13 @@ public class FibonacciMatrix {
         long result = fibMatrix.get(0, 1);
 
         if (negative) {
-            if (fibonacciIndex % 2 == 0) {
+            if (N % 2 == 0) {
                 result *= -1;
             }
 
-            fibonacciIndex *= -1;
+            N *= -1;
         }
 
-        System.out.println("The " + fibonacciIndex + suffix + " Fibonacci number is " + result + ".");
+        System.out.println("The " + N + suffix + " Fibonacci number is " + result + ".");
     }
 }

@@ -26,11 +26,13 @@ public class EuclideanDistance {
                     "Incompatible vectors of lengths " + a.length + " and " + b.length + ".");
         }
 
+        // sum of squared differences
         for (int i = 0; i < a.length; i++) {
             double diff = a[i] - b[i];
             distance += diff * diff;
         }
 
+        // return the square root of the sum
         return Math.sqrt(distance);
     }
 }

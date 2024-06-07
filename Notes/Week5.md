@@ -69,3 +69,5 @@
         return n * factorial(n - 1);
     }
     ```
+
+* An example of recursion in use can also be seen in the `inOrder()` method in my (basic) [BinarySearchTree](../BinarySearchTree/BinarySearchTree.java) implementation.

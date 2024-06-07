@@ -36,4 +36,9 @@ Learning Java using [this edX course by GTx](https://www.edx.org/certificates/pr
 ### [Notes](./Notes/Week5.md)
 
 ### Programs:
-* [LinkedList](./LinkedList/LinkedList.java) - Very basic implementation of a Linked List.
+* [LinkedList](./LinkedList/LinkedList.java) - Very basic (generic) implementation of a Linked List.
+* [BinarySearchTree](./BinarySearchTree/BinarySearchTree.java) - Very basic (generic) implementation of a Binary Search Tree.
+
+
+## FINISHED!
+This is the final state of this repository (unless I decide that I want to fix any code I find ugly later).

@@ -6,6 +6,10 @@ public class LinkedList<T> {
         E data;
         Node<E> next;
 
+        Node(E data) {
+            this(data, null);
+        }
+
         Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
@@ -42,7 +46,7 @@ public class LinkedList<T> {
     }
 
     public void addToRear(T data) {
-        Node<T> newNode = new Node<T>(data, null);
+        Node<T> newNode = new Node<T>(data);
         size++;
 
         if (isEmpty()) {

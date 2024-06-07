@@ -96,6 +96,7 @@ public class Matrix {
 
         Matrix result = new Matrix(rows, B.columnCount());
 
+        // ikj loop for locality.
         for (int i = 0; i < rows; i++) {
             for (int k = 0; k < B.rowCount(); k++) {
                 for (int j = 0; j < columns; j++) {
