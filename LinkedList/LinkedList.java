@@ -64,6 +64,10 @@ public class LinkedList<T> {
             return null;
         }
 
+        if (head == tail) {
+            tail = null;
+        }
+
         T data = head.data;
         head = head.next;
 
@@ -101,7 +105,7 @@ public class LinkedList<T> {
     }
 
     public T getAtIndex(int index) {
-        if (index >= size) {
+        if (index >= size || index < 0) {
             throw new IllegalArgumentException("Index " + index + " is out of bounds.");
         }
 
@@ -115,7 +119,7 @@ public class LinkedList<T> {
     }
 
     public void addAtIndex(T data, int index) {
-        if (index >= size) {
+        if (index >= size || index < 0) {
             throw new IllegalArgumentException("Index " + index + " is out of bounds.");
         }
 
@@ -131,7 +135,7 @@ public class LinkedList<T> {
     }
 
     public T removeAtIndex(int index) {
-        if (index >= size) {
+        if (index >= size || index < 0) {
             throw new IllegalArgumentException("Index " + index + " is out of bounds.");
         }
 
@@ -175,14 +179,14 @@ public class LinkedList<T> {
 
     public String toString() {
         Node<T> currentNode = head;
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         while (currentNode != null) {
-            result += currentNode.data.toString() + "\n";
+            result.append(currentNode.data).append("\n");
             currentNode = currentNode.next;
         }
 
-        return result;
+        return result.toString();
     }
 
     public boolean contains(T data) {
@@ -200,15 +204,8 @@ public class LinkedList<T> {
     }
 
     public void clear() {
-        Node<T> currentNode = head;
-
-        while (currentNode != null) {
-            size--;
-            head = currentNode;
-            currentNode = currentNode.next;
-        }
-
         head = null;
+        size = 0;
     }
 
     public int size() {
