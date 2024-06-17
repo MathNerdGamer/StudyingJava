@@ -121,6 +121,12 @@ public class LinkedList<T> {
     public void addAtIndex(T data, int index) {
         if (index >= size || index < 0) {
             throw new IllegalArgumentException("Index " + index + " is out of bounds.");
+        } else if (index == 0) {
+            addToFront(data);
+            return;
+        } else if (index == size - 1) {
+            addToRear(data);
+            return;
         }
 
         Node<T> currentNode = head;
@@ -130,13 +136,23 @@ public class LinkedList<T> {
         }
 
         Node<T> newNode = new Node<T>(data, currentNode.next);
+
+        if (currentNode == tail) {
+            tail = currentNode;
+        }
+
         currentNode.next = newNode;
+
         size++;
     }
 
     public T removeAtIndex(int index) {
         if (index >= size || index < 0) {
             throw new IllegalArgumentException("Index " + index + " is out of bounds.");
+        } else if (index == 0) {
+            return removeFromFront();
+        } else if (index == size - 1) {
+            return removeFromRear();
         }
 
         Node<T> currentNode = head;
